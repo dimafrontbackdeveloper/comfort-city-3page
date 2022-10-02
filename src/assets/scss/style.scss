@@ -1,0 +1,182 @@
+@import './variables';
+
+// миксины
+@import './_mixins.scss';
+
+// обнуление стилей
+@import './reset.scss';
+
+// контейнер
+@import './container.scss';
+
+// оболочка
+@import './wrapper.scss';
+
+// контент
+@import './content.scss';
+
+// шрифты
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@font-face {font-family: "SF Pro Rounded"; src: url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.eot"); src: url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.woff") format("woff"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.svg#SF Pro Rounded") format("svg"); }
+
+// глобальные стили
+@import './global.scss';
+
+
+.intro {
+   // padding-top: 91px;
+
+   @include breakpoint(567px){
+      padding-top: 0px;
+   }
+
+   figure{
+      position: relative;
+
+      img{
+         @include adaptiv-value('min-height',985,370,0);
+         max-height: 100vh;
+
+         @include breakpoint(425px){
+            width: 130%;
+            max-width: none;
+         }
+      }
+   }
+
+   // .intro__block
+
+   &__block{
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         @include adaptiv-value('padding-top',70,20,0);
+         @include adaptiv-value('padding-right',100,20,0);
+         @include adaptiv-value('padding-bottom',20,20,0);
+         @include adaptiv-value('padding-left',115,20,0);
+         background: linear-gradient(95.23deg, rgba(38, 38, 62, 0.38) -1%, rgba(38, 38, 62, 0.33) 100%);
+         backdrop-filter: blur(25px);
+         border-radius: 0px 20px 0px 0px;
+         z-index: 2;
+         
+
+         @include breakpoint(768px){
+            width: 100%;
+            border-radius:0px;
+
+         }
+
+         h3{
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            @include adaptiv-value('font-size',34,16,0);
+            @include adaptiv-value('line-height',34,19,0);
+            color:$primary;
+            @include adaptiv-value('margin-bottom',10,1,0);
+         }
+
+         h2{
+         font-weight: 700;
+         @include adaptiv-value('font-size',53,20,0);
+         @include adaptiv-value('line-height',64,32,0);
+         color: #FFFFFF;
+         @include adaptiv-value('margin-bottom',30,1,0);
+         }
+
+         p{
+            @include adaptiv-value('font-size',20,12,0);
+            line-height: 30px;
+            
+
+            &::before{
+               content: '';
+               display: block;
+               @include adaptiv-value('width',18,13,0);
+               @include adaptiv-value('height',24,18,0);
+               @include adaptiv-value('margin-right',10,8,0);
+               background-image: url('./../images/point.svg');
+               background-size: cover;
+               background-repeat: no-repeat;
+            }
+
+            span{
+            color: #FFFFFF;
+            opacity: 0.8;
+
+            }
+         }
+   }
+
+}
+
+
+
+.houses {
+   @include adaptiv-value('padding-top',180,35,0);
+
+   // .houses__container
+
+   &__container {
+   @include adaptiv-value('padding-left',260,25,0);
+
+   @include breakpoint(425px){
+      padding-left: 25px;
+   }
+   }
+   
+   // .houses__row
+
+   &__row{
+       @include adaptiv-value('margin-bottom',170,30,0);
+
+      &:last-child{
+         margin-bottom: 0px;
+      }
+   }
+
+   .swiper-slide{
+      border: 3px solid $primary;
+
+      @include breakpoint(768px){
+       border: 2px solid $primary;
+      }
+   }
+
+   // .houses__slide
+
+   &__slide{
+
+      // .houses__slide--bgfff
+
+      &--bgfff{
+        background: #fff;
+      }
+   }
+
+   .title {
+      @include adaptiv-value('margin-bottom',65,25,0);
+   
+      // .title__line
+   
+      &__line {
+      }
+   }
+}
+
+
+
+.contact{
+   @include adaptiv-value('margin-top',290,90,0);
+ 
+   .contact-description{
+      max-width: 640px;
+   }
+
+   h3{
+      margin-bottom: 10px;
+   }
+
+   p{
+      margin-bottom: 50px;
+   }
+}
